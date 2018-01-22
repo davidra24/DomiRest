@@ -1,0 +1,17 @@
+{
+  "name": "domirest",
+  "version": "1.0.0",
+  "description": "Domi tunja backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js"
+  },
+  "author": "Appsolution",
+  "license": "",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.6"
+  }
+}
