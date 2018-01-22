@@ -12,5 +12,5 @@ var typeSchema = new Schema({
     }
 });
 
-const tyoe = mongoose.model('comment', typeSchema);
+const type = mongoose.model('type', typeSchema);
 module.exports = type;

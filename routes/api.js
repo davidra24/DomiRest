@@ -1,5 +1,3 @@
-import { Types } from 'mongoose';
-
 const express = require('express');
 const router = express.Router();
 const conString = process.env.DATABASE_URL;

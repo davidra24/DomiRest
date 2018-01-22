@@ -1,5 +1,3 @@
-import { Double } from '../../../../AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/bson';
-
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -49,11 +47,11 @@ var PlaceSchema = new Schema({
         required: [true, "Habitado de lugar es requerido"]
     },
     calificacion:{
-		type: Double,
+		type: Number,
 		required: [false, 'calificacion de no lugar es requerido']
     },
     votos:{
-		type: Int32Array,
+		type: Number,
 		required: [false, 'votos de lugar no es requerido']
     },
     ciudad:{
@@ -69,14 +67,14 @@ var PlaceSchema = new Schema({
 		required: [false, 'matricula de lugar no es requerido']
     },
     ubicacionX:{
-        type: Double,
+        type: Number,
         required: [false, "ubicacion x de lugar no es requerida"]
     },
     ubicacionY:{
-        type: Double,
+        type: Number,
         required: [false, "ubicacion y de lugar no es requerida"]
     }
 });
 
 const place = mongoose.model('place', PlaceSchema);
-module.exports = Place;
+module.exports = place;
