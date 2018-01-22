@@ -69,7 +69,7 @@ router.delete('/comments/:id', function(req, res, next){
 		 res.send({comment});
 	});
 });
-router.delete('/Types/:id', function(req, res, next){
+router.delete('/types/:id', function(req, res, next){
 	Type.findByIdAndRemove({_id: req.params.id}).then(function(type){
 		 res.send({type});
 	});
