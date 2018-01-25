@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var typeSchema = new Schema({
+var TypeSchema = new Schema({
     name:{
         type: String,
 		required: [true, 'nombre tipo de lugar es requerido']
@@ -12,5 +12,5 @@ var typeSchema = new Schema({
     }
 });
 
-const type = mongoose.model('type', typeSchema);
-module.exports = type;
+const Type = mongoose.model('type', TypeSchema);
+module.exports = Type;
