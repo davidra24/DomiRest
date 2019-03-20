@@ -4,6 +4,7 @@ const Place = require('../models/places');
 const Comment = require('../models/comments');
 const Type = require('../models/types');
 const Photo = require('../models/photos');
+const User = require('../models/users');
 
 //GET
 router.get('/places', function(req, res, next) {
@@ -55,6 +56,18 @@ router.get('/photos/:id', function(req, res, next) {
 
 });
 
+router.get('/users', function(req, res, next) {
+	User.find({}).then(function(user){
+		res.send(user);
+	});
+});
+
+router.get('/users/:id', function(req, res, next) {
+	User.findById(req.params.id).then(function(user){
+		res.send(user);
+	});
+
+});
 //POST
 router.post('/places', function(req, res, next) {
 	Place.create(req.body).then(function(place){
@@ -74,6 +87,11 @@ router.post('/types', function(req, res, next) {
 router.post('/photos', function(req, res, next) {
     Photo.create(req.body).then(function(photo){
 		res.send(photo);
+	}).catch(next);
+});
+router.post('/users', function(req, res, next) {
+    User.create(req.body).then(function(user){
+		res.send(user);
 	}).catch(next);
 });
 
@@ -98,6 +116,11 @@ router.delete('/photos/:id', function(req, res, next){
 		 res.send({photo});
 	});
 });
+router.delete('/users/:id', function(req, res, next){
+	Users.findByIdAndRemove({_id: req.params.id}).then(function(user){
+		 res.send({user});
+	});
+});
 
 //PUT
 router.put('/places/:id', function(req, res, next){
@@ -118,6 +141,11 @@ router.put('/types/:id', function(req, res, next){
 router.put('/photos/:id', function(req, res, next){
 	Photo.findByIdAndUpdate({_id:req.params.id}, req.body, {new: true}).then(function(photo){
 			res.send(photo);
+	});
+});
+router.put('/users/:id', function(req, res, next){
+	User.findByIdAndUpdate({_id:req.params.id}, req.body, {new: true}).then(function(user){
+			res.send(user);
 	});
 });
 
